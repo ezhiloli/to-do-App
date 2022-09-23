@@ -1,0 +1,199 @@
+/* Set the Margins for 0px for block level elements */
+body,h1,h2,h3,h4,h5,h6{
+	margin: 0px;
+}
+
+/* Set the Background color to black */
+body{
+	background-color: black;
+}
+
+/* Setting the App display */
+.display{
+	height: 80vh;
+	background-color: wheat;
+	width: 70vw;
+	margin: auto;
+}
+.text-align{
+	/* text-align: center; */
+}
+.font-fam{
+	font-family: sans-serif;
+}
+.section-heading{
+	padding-top: 2vh;
+	font-size: 1.8rem;
+	padding-bottom: 5px;
+	border-bottom: 2px solid white;
+}
+
+#task-details input{ 
+	width: 95%;
+	background-color: transparent;
+	border-color: transparent;
+	padding: 10px;
+	letter-spacing: 0.2rem;
+	margin-bottom: 2vh;
+	color: white;
+	padding-left: 2vw;
+}
+#task-description p{
+	word-wrap: break-word;
+	width: auto;
+}
+input:focus{
+	outline: none;
+}
+input::placeholder{
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	padding-left: 1vw;
+}
+#task-details{
+	border-bottom: 2px solid white;
+}
+.cate-due{
+	border-bottom: 2px solid white;
+	width: 100%;
+	height: 12vh;
+	display: flex;
+	flex-direction: row;
+}
+.category{
+	border-right: 2px solid white;
+	width: 50%;
+}
+.category h4{
+	padding-left: 2vw;
+	padding-top: 1vh;
+	font-family: sans-serif;
+}
+select{
+    padding: 15px;
+    width: 25vw;
+    background-color: transparent;
+    border: none;
+    margin-left: 1vw;
+    font-family: sans-serif;
+}
+select:focus{
+	outline: none;
+}
+input[type="date"]{
+    padding: 15px;
+    width: 25vw;
+    background-color: transparent;
+    border: none;
+    margin-left: 1vw;
+    font-family: sans-serif;
+}
+.add-task button{
+	padding: 15px;
+	width: 15vw;
+	height: 10vh;
+}
+.button-for-add{
+	margin-top: 2vh;
+	display: flex;
+	justify-content: center;
+	border-bottom: 2px solid white;
+}
+.add-task #add{
+	background-color: black;
+	color: white;
+	border: none;
+}
+ #delete{
+	background-color: orangered;
+	color: white;
+	border: none;
+	padding: 15px;
+	width: 15vw;
+	height: 10vh;
+	margin-left: 2vw;
+}
+.add-task{
+	margin-bottom: 3vh;
+}
+.tasks li,p{
+	list-style-type: none;
+	display: inline-block;
+	margin: 0px;
+}
+.tasks,.task-list,ul{
+	display: inline-block;
+}
+input[type="checkbox"]{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0px;
+	position: relative;
+	top:-2vh;
+	padding-right: 3vw;
+}
+#task-description li{
+	padding: 0px;
+	margin-left: -5vw;
+}
+
+#tname{
+	margin-left: 7vw;
+}
+#task-date{
+	display: block;
+	margin-left: 3vw;
+	margin-top: 2vh;
+}
+.tasks li p:not(#task-date){
+	font-family: sans-serif;
+	padding: 0px;
+	padding-top: -2px;
+
+}
+#task-date i{
+	color: rgb(134, 127, 127);
+	margin-right: 1vw;
+	margin-left: 6vw;
+}
+.cat-button{
+	display: inline-block;
+	padding: 7px;
+	width: 10vw;
+	height: 4vh;
+	background-color: rgb(198, 13, 235);
+	border: none;
+	margin-right: 5vw;
+	text-align: center;
+	color: white;
+}
+.tasks{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-bottom: 2vh;
+	border-bottom: 2px solid white;
+	width: 100%;
+}
+.button-container{
+	padding-left: 25vw;
+	padding-top: 1vh;
+}
+.task-list{
+	margin-left: 5vw;
+	width: 65vw;
+	height: 25vh;
+	overflow: scroll;
+    text-align: center !important;
+    margin: auto;
+    margin-left: 15vw;
+	margin-top: -25vh;
+	
+}
+.task-list::-webkit-scrollbar {
+    display: none;
+}
+.fa{
+	margin-top: 2vh;
+}

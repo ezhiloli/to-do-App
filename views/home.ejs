@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>
+        <%= locals.title %>
+        </title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        
+    </head>
+    <script src="https://kit.fontawesome.com/9f129c00e7.js" crossorigin="anonymous"></script>
+    <body>
+        <!-- App Display positin=== Center && properties -->
+	<div class="display">
+
+
+
+		<!-- Heading  -->
+		<section id="app-heading">
+			<h1 class="text-align section-heading">TODO App </h1>
+		</section>
+		<!-- Heading Ends Here -->
+
+
+
+		<!-- Description Section -->
+		<section id="description">
+			<h4> DESCRIPTION </h4>
+		</section>
+		
+		<!-- Description Ends Here -->
+
+
+            <form  action='/create-task' method="POST">
+			<!-- Task Menu/Details -->
+			<div id="task-details">
+				<input type="textarea" name="tname" placeholder="what you need to do ?" required>
+			</div>
+			<!-- Task Menu/Details Ends Here -->
+
+
+
+			<!-- Category and Due Date -->
+			<div class="cate-due">
+
+				<!-- Category Section -->
+				<div class="category">
+
+					<h4> CATEGORY </h4>
+
+					<section>
+					<select name="tname" id="cars" class="drop-down" required>
+    					<option value="">Select a Category</option>
+    					<option value="Personal">Personal</option>
+    					<option value="Work">Work</option>
+    					<option value="School">School</option>
+    					<option value="Cleaning">Cleaning</option>
+    					<option value="Other">Other</option>
+  					</select>
+
+					</section>
+				</div>
+				<!-- Category Section Ends Here -->
+
+				<!-- Due Date Section -->
+				<div class="category">
+
+						<h4> DUE DATE </h4>
+
+						<section>
+							  <input type="date" id="birthday" name="tdate" required>
+						</section>
+
+				</div>
+				<!-- Due Date Section Ends Here -->
+			</div>
+
+				<!-- Add/Delete task Button -->
+				<div class="button-for-add">
+					<section class="add-task">
+						<button type="submit" id="add" value="addbutton" name="action"> <span>+</span> ADD TASK</button>
+                    </section>
+                </form>
+                    <section>                   
+                        <!-- Delete Button  -->
+                        <div class="delete-button">
+                             <button type="submit" class="delete-button" form="delete1" id="delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                &nbsp; DELETE TASKS
+                            </button> 
+                        </div> 
+				</div>
+        
+	</div>
+
+	<!--  To Display and Delete Tasks-->
+	<div class="task-list" >
+		<form id="delete1" action="/delete-multiple" method="POST">
+			<ul>
+				<!-- Iterating the task list -->
+				<% for (var i of task_list) {%>
+					<div class="tasks">
+						<section>
+						
+							<input type="checkbox" name=task value="<%= i._id %>">
+						<span id="task-description">
+							<li>
+							<p id="tname"><%=i.tname %></p>
+							<p id="task-date"> <i class="fa-solid fa-calendar-check"></i><%= i.tdate %></p>
+						</span>
+						</section>
+							<section class="button-container">
+								<div class="cat-button" id="task-category">
+									<p>
+									<%= i.tcategory %>
+								</p>
+							</div>
+							</section>
+							<section>
+
+								<a href="/delete-task-single/?id=<%= i._id %>">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</a>
+
+							</section>
+						</li>
+						  
+						</div>
+					<% } %>
+				</ul>
+
+
+
+
+
+		</form>
+	</div>
+    </body>
+
+</html>
